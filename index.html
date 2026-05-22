@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft Table • Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="https://cdn.discordapp.com/avatars/1399581755148603484/a_583804c931744695699a40d0abc4e86b.gif?size=512"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><span class="accent-text">Craft</span> Table</a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a class="nav-item active" onclick="switchPage('home', event)"><i
+                            class="fa-solid fa-house-chimney"></i> Início</a></li>
+
+                <li class="dropdown">
+                    <a class="nav-item-drop" id="dropdownTrigger">
+                        <span class="nav-item-text"><i class="fa-solid fa-cubes"></i> Módulos</span>
+                        <i class="fa-solid fa-chevron-right drop-icon"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a onclick="switchPage('bot', event)"><i class="fa-solid fa-ticket-simple"></i>
+                                Tickets & Transcripts</a></li>
+                        <li><a onclick="switchPage('bot', event)"><i class="fa-solid fa-handshake"></i> Sistema
+                                de Parcerias</a></li>
+                        <li><a onclick="switchPage('bot', event)"><i class="fa-solid fa-shield-halved"></i>
+                                Segurança Anti-Alt</a></li>
+                        <li><a onclick="switchPage('bot', event)"><i class="fa-solid fa-trophy"></i> Rankings &
+                                XP</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="nav-item" onclick="switchPage('comandos', event)"><i class="fa-solid fa-terminal"></i>
+                        Comandos</a></li>
+                <li><a class="nav-item" onclick="switchPage('bot', event)"><i class="fa-solid fa-robot"></i>
+                        Recursos</a></li>
+                <li><a class="nav-item" onclick="switchPage('equipe', event)"><i class="fa-solid fa-users-gear"></i>
+                        Equipe</a></li>
+                <li><a class="nav-item" onclick="switchPage('suporte', event)"><i class="fa-solid fa-headset"></i>
+                        Suporte</a></li>
+                <li><a class="nav-item" onclick="switchPage('termos', event)"><i class="fa-solid fa-file"></i>
+                        Termos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main id="page-home" class="page-section active">
+        <header class="hero">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-fire text-gold"></i> NOVIDADE: MÓDULO MINECRAFT
+                    INTEGRADO</span>
+                <h1>Leve o seu servidor ao <span class="gold-text">Próximo Nível</span></h1>
+                <p>O bot definitivo para gerenciar guildas competitivas, organizar parcerias automáticas, abrir tickets
+                    dinâmicos e blindar sua comunidade contra invasões com estabilidade profissional.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary"><i class="fa-brands fa-discord"></i> Adicionar ao Discord</a>
+                    <a href="#" class="btn-secondary" onclick="switchPage('bot', event)"><i
+                            class="fa-solid fa-wand-magic-sparkles"></i> Ver Recursos</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="stats-bar">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-value text-green-vivid">99.99%</span>
+                    <span class="stat-label"><i class="fa-solid fa-circle-check"></i> Uptime Garantido</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value text-gold-vivid">&lt; 8ms</span>
+                    <span class="stat-label"><i class="fa-solid fa-bolt-lightning"></i> Resposta Instantânea</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value text-green-vivid">142.5k</span>
+                    <span class="stat-label"><i class="fa-solid fa-users"></i> Usuários Atendidos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-value text-gold-vivid">1,240</span>
+                    <span class="stat-label"><i class="fa-solid fa-server"></i> Guildas Ativas</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-highlights">
+            <div class="highlights-wrapper">
+                <div class="highlight-card">
+                    <i class="fa-solid fa-microchip highlight-icon"></i>
+                    <h4>Hospedagem 24/7</h4>
+                    <p>Instâncias isoladas rodando em nuvem de baixa latência para mitigar quedas de conexão.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-shield highlight-icon"></i>
+                    <h4>Filtro de Invasões</h4>
+                    <p>Análise de comportamento em milissegundos para barrar ataques coordenados de fakes.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-chart-line highlight-icon"></i>
+                    <h4>Métricas Avançadas</h4>
+                    <p>Acompanhe gráficos completos de engajamento diretamente por comandos nativos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="partnership-home">
+            <div class="partner-container">
+                <div class="partner-text">
+                    <span class="badge-gold"><i class="fa-solid fa-star"></i> MÓDULO EXCLUSIVO PREMIUM</span>
+                    <h2>Sistemas de Guildas & Comunidades Avançadas</h2>
+                    <p>Construído focado na performance absoluta. Configure de maneira totalmente modular painéis
+                        interativos com botões integrados, gerencie cargos por xp e impulsione o engajamento geral.</p>
+                    <div class="highlight-box">
+                        <div class="highlight-item"><i class="fa-solid fa-square-check text-green-vivid"></i>
+                            <span>Interface Dark Mode de alto contraste sólido</span>
+                        </div>
+                        <div class="highlight-item"><i class="fa-solid fa-square-check text-green-vivid"></i> <span>Sem
+                                delay de processamento e API isolada</span></div>
+                        <div class="highlight-item"><i class="fa-solid fa-square-check text-green-vivid"></i>
+                            <span>Proteção automatizada contra spammers e links suspeitos</span>
+                        </div>
+                        <div class="highlight-item"><i class="fa-solid fa-square-check text-green-vivid"></i>
+                            <span>Filtros avançados e logs integrados por canais</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="partner-preview">
+                    <div class="discord-ui-mockup">
+                        <div class="discord-header"><i class="fa-brands fa-discord"></i> #craft-parceria</div>
+                        <div class="discord-message">
+                            <div class="discord-avatar-bot"><img
+                                    src="https://cdn.discordapp.com/avatars/1399581755148603484/a_583804c931744695699a40d0abc4e86b.gif?size=512">
+                            </div>
+                            <div class="msg-body">
+                                <span class="bot-name">Pixel Legends <span class="bot-tag">BOT</span></span>
+                                <div class="discord-embed">
+                                    <h4>🤝 Parceria Fechada com Sucesso!</h4>
+                                    <p>O servidor parceiro foi catalogado. Divulgação disparada em nossa rede global.
+                                    </p>
+                                    <div class="embed-fields-grid">
+                                        <div><strong>Representante:</strong> <span
+                                                class="text-gold-vivid">@Matheus</span></div>
+                                        <div><strong>Membros:</strong> <span class="text-green-vivid">1,540</span></div>
+                                        <div><strong>Categoria:</strong> <span>Minecraft</span></div>
+                                        <div><strong>Verificação:</strong> <span class="text-green-vivid">Seguro</span>
+                                        </div>
+                                    </div>
+                                    <span class="embed-footer">Hoje às 14:05 • Pixel Legends Security</span>
+                                </div>
+                                <div class="discord-buttons-row">
+                                    <a href="https://discord.gg/GYGVBqGEwP" target="_blank" class="dc-btn btn-dc-green">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Entrar no Servidor
+                                    </a>
+
+                                    <a href="#" target="_blank" class="dc-btn btn-dc-grey">
+                                        <i class="fa-solid fa-circle-info"></i> Detalhes
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main id="page-comandos" class="page-section">
+        <section class="inner-container">
+            <div class="section-header">
+                <h2>Central de <span class="accent-text">Comandos Interativos</span></h2>
+                <p>Filtre e explore as diretrizes executáveis do bot com permissões em tempo real.</p>
+            </div>
+
+            <div class="filter-tabs-row">
+                <button class="filter-tab active">Todos os Módulos (8)</button>
+                <button class="filter-tab"><i class="fa-solid fa-ticket"></i> Suporte</button>
+                <button class="filter-tab"><i class="fa-solid fa-handshake"></i> Parcerias</button>
+                <button class="filter-tab"><i class="fa-solid fa-shield"></i> Segurança</button>
+                <button class="filter-tab"><i class="fa-solid fa-gamepad"></i> Guildas</button>
+            </div>
+
+            <div class="search-box-container">
+                <i class="fa-solid fa-magnifying-glass search-icon text-green-vivid"></i>
+                <input type="text" class="custom-input" placeholder="Procure por comandos executáveis (ex: /ticket)...">
+                <button class="btn-input-search"><i class="fa-solid fa-filter"></i></button>
+            </div>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Comando</th>
+                            <th>Função Prática</th>
+                            <th>Categoria</th>
+                            <th>Status</th>
+                            <th>Permissão</th>
+                            <th>Latência</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>/craft-ticket setup</code></td>
+                            <td>Instancia o painel dinâmico de suporte via botões.</td>
+                            <td><span class="table-badge b-green">Suporte</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-shield-halved text-gold-vivid"></i> Admin</td>
+                            <td><span>4ms</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/craft-parceria divulgar</code></td>
+                            <td>Executa o loop de anúncio nos canais parceiros.</td>
+                            <td><span class="table-badge b-gold">Parcerias</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-user-shield text-green-vivid"></i> Staff</td>
+                            <td><span>7ms</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/guilda criar</code></td>
+                            <td>Gera uma facção com canais e cargos automáticos.</td>
+                            <td><span class="table-badge b-light">Jogos</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-user"></i> Membro</td>
+                            <td><span>3ms</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/config anti-link</code></td>
+                            <td>Bloqueia convites externos do Discord de forma severa.</td>
+                            <td><span class="table-badge b-green">Segurança</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-shield-halved text-gold-vivid"></i> Admin</td>
+                            <td><span>5ms</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/backup gerar</code></td>
+                            <td>Salva as configurações de canais na nossa nuvem.</td>
+                            <td><span class="table-badge b-light">Backup</span></td>
+                            <td><span class="status-indicator maintenance">Manutenção</span></td>
+                            <td><i class="fa-solid fa-shield-halved text-gold-vivid"></i> Dono</td>
+                            <td><span>--</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/rank info</code></td>
+                            <td>Exibe o cartão de experiência e nível atual do usuário.</td>
+                            <td><span class="table-badge b-gold">Economia</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-user"></i> Livre</td>
+                            <td><span>4ms</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/moderacao ban</code></td>
+                            <td>Aplica banimento estrutural salvando logs e ID do infrator.</td>
+                            <td><span class="table-badge b-green">Moderação</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-user-shield text-green-vivid"></i> Staff</td>
+                            <td><span>6ms</span></td>
+                        </tr>
+                        <tr>
+                            <td><code>/ping</code></td>
+                            <td>Gera a resposta de latência da máquina virtual em ms.</td>
+                            <td><span class="table-badge b-light">Utilidades</span></td>
+                            <td><span class="status-indicator online">Ativo</span></td>
+                            <td><i class="fa-solid fa-user"></i> Livre</td>
+                            <td><span>2ms</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-pagination">
+                <span class="pagination-info">Mostrando 1-8 de 8 comandos</span>
+                <div class="pagination-buttons">
+                    <button class="btn-page disabled"><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                    <button class="btn-page active">1</button>
+                    <button class="btn-page disabled">Próximo <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main id="page-bot" class="page-section">
+        <section class="inner-container">
+            <div class="section-header">
+                <h2>Engenharia & <span class="gold-text">Arquitetura Virtual</span></h2>
+                <p>Painéis visuais projetados de forma nativa e robusta para alta escalabilidade de dados.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card-vivid">
+                    <div class="card-icon-vivid icon-green"><i class="fa-solid fa-ticket-simple"></i></div>
+                    <h3>Tickets com Transcripts</h3>
+                    <p>Os chamados geram um link criptografado com todo o histórico de mensagens salvas em nosso
+                        servidor web ao serem fechados.</p>
+                    <span class="card-meta-tag"><i class="fa-solid fa-check-double"></i> 100% Automatizado</span>
+                </div>
+                <div class="feature-card-vivid">
+                    <div class="card-icon-vivid icon-gold"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Sincronização de Logs</h3>
+                    <p>Acompanhe e configure embeds detalhados que registram edições de mensagens, exclusões e trocas de
+                        avatares.</p>
+                    <span class="card-meta-tag"><i class="fa-solid fa-bolt"></i> Resposta em 2ms</span>
+                </div>
+                <div class="feature-card-vivid">
+                    <div class="card-icon-vivid icon-green"><i class="fa-solid fa-user-lock"></i></div>
+                    <h3>Verificação Anti-Alt</h3>
+                    <p>Sistemas avançados que impedem contas fakes ou criadas recentemente de causarem estragos em sua
+                        guilda ou servidor.</p>
+                    <span class="card-meta-tag"><i class="fa-solid fa-shield"></i> Alta Segurança</span>
+                </div>
+                <div class="feature-card-vivid">
+                    <div class="card-icon-vivid icon-light"><i class="fa-solid fa-cubes"></i></div>
+                    <h3>Integração Remota</h3>
+                    <p>Conectividade estendida pronta para responder e linkar dados com banco de dados externos via
+                        Webhooks seguros.</p>
+                    <span class="card-meta-tag"><i class="fa-solid fa-code"></i> APIs Prontas</span>
+                </div>
+                <div class="feature-card-vivid">
+                    <div class="card-icon-vivid icon-gold"><i class="fa-solid fa-ranking-star"></i></div>
+                    <h3>Sistemas de XP e Rank</h3>
+                    <p>Rankings internos automatizados com imagens customizáveis e recompensas em cargos por pura
+                        atividade por voz ou chat.</p>
+                    <span class="card-meta-tag"><i class="fa-solid fa-trophy"></i> Engajamento</span>
+                </div>
+                <div class="feature-card-vivid">
+                    <div class="card-icon-vivid icon-green"><i class="fa-solid fa-sliders"></i></div>
+                    <h3>Customização Absoluta</h3>
+                    <p>Altere cores de embeds, mensagens de boas-vindas e emojis de botões diretamente por comandos
+                        rápidos e intuitivos.</p>
+                    <span class="card-meta-tag"><i class="fa-solid fa-gears"></i> Customizável</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main id="page-equipe" class="page-section">
+        <section class="inner-container">
+            <div class="section-header">
+                <h2>Conheça a <span class="accent-text">Equipe</span></h2>
+                <p>Os desenvolvedores e mentes por trás da construção e manutenção do bot.</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card-vivid">
+                    <div>
+                        <img src="../Mundo Zera's Craft/assets/images/geral/icone.png">
+                    </div>
+                    <h3>MatheuZera</h3>
+                    <span class="team-role-vivid"><i class="fa-solid fa-crown text-gold-vivid"></i> Lead Developer & UI
+                        Designer</span>
+                    <p>Responsável pelo núcleo lógico do bot, arquitetura modular de comandos e design da interface web
+                        integrada.</p>
+                    <div class="team-badges-container">
+                        <span class="t-badge"><i class="fa-brands fa-html5"></i> Html5</span>
+                        <span class="t-badge"><i class="fa-brands fa-css3"></i> Css3</span>
+                        <span class="t-badge"><i class="fa-brands fa-js"></i> JS</span>
+                        <span class="t-badge"><i class="fa-solid fa-layer-group"></i> Design</span>
+                        <span class="t-badge-special"><i class="fa-solid fa-certificate"></i> Discord Design</span>
+                    </div>
+                    <div class="team-socials-vivid">
+                        <a href="https://github.com/MatheuZera" class="social-icon"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://discord.gg/GYGVBqGEwP" class="social-icon"><i
+                                class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card-vivid">
+                    <div>
+                        <img src="../Mundo Zera's Craft/assets/images/geral/icone.png">
+                    </div>
+                    <h3>Aguardando..</h3>
+                    <span class="team-role-vivid"><i class="fa-solid fa-code text-green-vivid"></i> Nada no
+                        Momento</span>
+                    <p>Aguardando Colaborador</p>
+                    <div class="team-badges-container">
+                        <span class="t-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> ?</span>
+                        <span class="t-badge"><i class="fa-solid fa-code"></i> ?</span>
+                        <span class="t-badge"><i class="fa-solid fa-cloud"></i> ?</span>
+                        <span class="t-badge"><i class="fa-solid fa-network-wired"></i> ?</span>
+                        <span class="t-badge-special"><i class="fa-solid fa-server"></i> ...</span>
+                    </div>
+                    <div class="team-socials-vivid">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main id="page-suporte" class="page-section">
+        <section class="inner-container">
+            <div class="section-header">
+                <h2>Central de <span class="gold-text">Atendimento Integrado</span></h2>
+                <p>Dúvidas com módulos ou falhas na API? Abra um chamado de suporte imediato.</p>
+            </div>
+
+            <div class="support-layout">
+                <form class="support-form-vivid"
+                    onsubmit="event.preventDefault(); alert('Chamado enviado com sucesso!');">
+                    <div class="form-title-row">
+                        <h3><i class="fa-solid fa-envelope-open-text text-green-vivid"></i> Formulário Web</h3>
+                        <span class="form-status-tag"><i class="fa-solid fa-circle text-green-vivid"></i> Sistema
+                            Online</span>
+                    </div>
+
+                    <div class="form-grid-2-col">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-user-tag text-green-vivid"></i> Seu Usuário Discord</label>
+                            <input type="text" class="custom-input-vivid" placeholder="exemplo#0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-hashtag text-gold-vivid"></i> ID do Servidor</label>
+                            <input type="text" class="custom-input-vivid" placeholder="853925729147...">
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2-col">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-envelope text-green-vivid"></i> E-mail de Contato</label>
+                            <input type="email" class="custom-input-vivid" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-bars-staggered text-gold-vivid"></i> Prioridade</label>
+                            <select class="custom-input-vivid select-vivid">
+                                <option>Alta - Instabilidade Crítica</option>
+                                <option selected>Média - Ajuste de Configurações</option>
+                                <option>Baixa - Dúvida Geral / Sugestão</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-paperclip text-green-vivid"></i> Anexar Log ou Printscreen
+                            (Opcional)</label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="file-hidden" class="file-input-hidden">
+                            <label for="file-hidden" class="file-upload-label"><i
+                                    class="fa-solid fa-cloud-arrow-up"></i> Escolher arquivo de texto ou
+                                imagem...</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-circle-info text-green-vivid"></i> Assunto Principal</label>
+                        <select class="custom-input-vivid select-vivid">
+                            <option>Erro de Permissão nos Comandos</option>
+                            <option>Falhas no Módulo de Ticket</option>
+                            <option>Problemas com Logs de Parcerias</option>
+                            <option>Sugestão / Parceria Comercial</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-pen-to-square text-gold-vivid"></i> Detalhes do Problema</label>
+                        <textarea class="custom-input-vivid custom-textarea-vivid" rows="4"
+                            placeholder="Descreva de forma clara e objetiva para agilizar o atendimento..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="accept-terms" required>
+                        <label for="accept-terms">Autorizo a equipe de desenvolvimento a analisar os metadados públicos
+                            enviados.</label>
+                    </div>
+
+                    <div class="form-footer-buttons">
+                        <button type="submit" class="btn-primary border-none"><i class="fa-solid fa-paper-plane"></i>
+                            Enviar Chamado</button>
+                        <button type="reset" class="btn-secondary"><i class="fa-solid fa-trash-can"></i> Limpar</button>
+                    </div>
+                </form>
+
+                <div class="support-sidebar-vivid">
+                    <div class="info-card-vivid card-border-green">
+                        <div class="card-header-icon text-green-vivid"><i class="fa-brands fa-discord"></i></div>
+                        <h4>Comunidade Oficial</h4>
+                        <p>Entre na nossa central de atendimento coletiva e interaja diretamente com moderadores humanos
+                            experientes.</p>
+                        <a href="#" class="btn-primary block-btn"><i class="fa-solid fa-right-to-bracket"></i> Conectar
+                            ao Servidor</a>
+                    </div>
+                    <div class="info-card-vivid card-border-gold">
+                        <div class="card-header-icon text-gold-vivid"><i class="fa-solid fa-book-bookmark"></i></div>
+                        <h4>Wiki & Documentação</h4>
+                        <p>Consulte guias passo a passo contendo exemplos práticos de como estruturar as permissões
+                            hierárquicas corretas.</p>
+                        <a href="#" class="btn-secondary block-btn"><i class="fa-solid fa-magnifying-glass-chart"></i>
+                            Ver Documentação</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main class="inner-container legal-layout page-section id=page-termos">
+
+        <aside class="legal-sidebar">
+            <div class="sticky-sidebar-box">
+                <h4>Documentação</h4>
+                <ul class="sidebar-menu">
+                    <li><a class="sidebar-link active" onclick="toggleLegalTab('termos')"><i
+                                class="fa-solid fa-scale-balanced"></i> Termos de Serviço</a></li>
+                    <li><a class="sidebar-link" onclick="toggleLegalTab('privacidade')"><i
+                                class="fa-solid fa-user-shield"></i> Política de Privacidade</a></li>
+                </ul>
+                <div class="last-update-box">
+                    <span class="text-muted"><i class="fa-solid fa-clock"></i> Última Atualização:</span>
+                    <span class="text-gold-vivid font-bold">Maio de 2026</span>
+                </div>
+            </div>
+        </aside>
+
+        <section id="legal-termos" class="legal-content-section active">
+            <div class="legal-header">
+                <h2>Termos de <span class="accent-text">Serviço</span></h2>
+                <p>Ao adicionar ou utilizar o ecossistema Pixel Legends, você concorda com as diretrizes abaixo.</p>
+            </div>
+
+            <div class="legal-text-block">
+                <h3>1. Aceitação dos Termos</h3>
+                <p>Ao autorizar a entrada da aplicação Pixel Legends em sua guilda ou interagir com seus comandos, você
+                    declara estar ciente e de acordo com todas as obrigações estipuladas neste documento de
+                    conformidade.</p>
+
+                <h3>2. Uso Autorizado e Restrições</h3>
+                <p>O sistema foi desenvolvido estritamente para a otimização, segurança e entretenimento de comunidades
+                    virtuais. É expressamente proibido:</p>
+                <div class="highlight-box legal-box">
+                    <div class="highlight-item"><i class="fa-solid fa-circle-xmark text-gold-vivid"></i> <span>Utilizar
+                            o bot para disparar spams ou realizar ataques de engenharia social.</span></div>
+                    <div class="highlight-item"><i class="fa-solid fa-circle-xmark text-gold-vivid"></i> <span>Explorar
+                            vulnerabilidades (bugs) ou tentar burlar o código de proteção Anti-Alt.</span></div>
+                    <div class="highlight-item"><i class="fa-solid fa-circle-xmark text-gold-vivid"></i> <span>Armazenar
+                            ou expor dados confidenciais obtidos por meio de falhas externas.</span></div>
+                </div>
+
+                <h3>3. Módulos de Suporte e Transcripts</h3>
+                <p>Os logs criados pelo comando <code>/craft-ticket</code> guardam mensagens de texto criptografadas em
+                    nosso banco de dados. Os administradores das guildas são os únicos e totais responsáveis legais pelo
+                    conteúdo e informações transacionadas nos canais onde o recurso está ativado.</p>
+
+                <h3>4. Modificações e Disponibilidade</h3>
+                <p>Reservamo-nos o direito de alterar, suspender ou descontinuar módulos e comandos para correções
+                    preventivas ou upgrades de infraestrutura sem aviso prévio, mantendo o compromisso de buscar o
+                    uptime estabelecido de 99.99%.</p>
+            </div>
+        </section>
+
+        <section id="legal-privacidade" class="legal-content-section">
+            <div class="legal-header">
+                <h2>Política de <span class="gold-text">Privacidade</span></h2>
+                <p>Transparência total sobre quais dados coletamos e como protegemos sua comunidade.</p>
+            </div>
+
+            <div class="legal-text-block">
+                <h3>1. Coleta de Informações</h3>
+                <p>O Pixel Legends atua de forma cirúrgica e minimalista. Coletamos exclusivamente metadados públicos
+                    essenciais via API oficial do Discord para o funcionamento lógico do sistema:</p>
+                <ul>
+                    <li>Identificadores numéricos únicos (ID de Usuário, ID de Servidor e ID de Canais).</li>
+                    <li>Logs estruturais de texto gerados no encerramento de atendimentos (Transcripts).</li>
+                    <li>Contadores numéricos de mensagens enviados para o funcionamento do Módulo de XP.</li>
+                </ul>
+
+                <h3>2. Processamento e Segurança</h3>
+                <p>Nenhuma informação coletada é vendida, alugada ou exposta para terceiros. O armazenamento ocorre em
+                    instâncias em nuvem isoladas e protegidas por firewalls rigorosos. Os logs de parcerias e relatórios
+                    de auditoria permanecem retidos apenas pelo tempo técnico exigido para as validações nativas.</p>
+
+                <h3>3. Direitos do Usuário</h3>
+                <p>A qualquer momento, os proprietários de servidores ou usuários individuais podem solicitar a exclusão
+                    definitiva de seus registros históricos de nossa base através do formulário oficial de atendimento
+                    na Central de Suporte.</p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand-column">
+                <a href="#" class="logo" onclick="switchPage('home', event)"><span class="accent-text">Craft</span>
+                    Table</a>
+                <p class="footer-desc">Soluções modulares, seguras e de alta performance destinadas ao ecossistema
+                    corporativo do Discord.</p>
+                <div class="footer-social-row">
+                    <a href="https://discord.gg/GYGVBqGEwP" class="f-social-item" title="Mundo Zera's Craft Discord"><i
+                            class="fa-brands fa-discord"></i></a>
+                    <a href="https://github.com/MatheuZera" class="f-social-item" title="Meus Projetos.."><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="#" class="f-social-item" title="Canal Oficial @MatheuZera"><i
+                            class="fa-brands fa-youtube"></i></a>
+                    <a href="https://matheuzera.github.io/ZerasCraft/" class="f-social-item" title="Website Oficial"><i
+                            class="fa-solid fa-external-link-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-nav-column">
+                <h5>Navegação</h5>
+                <ul class="footer-menu-links">
+                    <li><a onclick="switchPage('home', event)"><i class="fa-solid fa-home"></i> Início</a></li>
+                    <li><a onclick="switchPage('comandos', event)"><i class="fa-solid fa-code"></i> Lista de
+                            Comandos</a></li>
+                    <li><a onclick="switchPage('bot', event)"><i class="fa-solid fa-check-double"></i> Recursos
+                            Gerais</a></li>
+                    <li><a onclick="switchPage('equipe', event)"><i class="fa-solid fa-users"></i> Equipe Craft</a></li>
+                    <li><a onclick="switchPage('suporte', event)"><i class="fa-solid fa-right-to-bracket"></i>
+                            Suporte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-status-column">
+                <h5>Compliance & Infra</h5>
+                <ul class="footer-menu-links">
+                    <li><a onclick="switchPage('termos', event)"><i class="fa-solid fa-file"></i> Termos de Serviço</a>
+                    </li>
+                    <li><a onclick="switchPage('termos', event)"><i class="fa-solid fa-bars"></i> Feedbacks</a></li>
+                    <li><a href="https://matheuzera.github.io/ZerasCraft/"><i class="fa-solid fa-external-link-alt"></i>
+                            MUNDO ZERA'S CRAFT Web</a></li>
+                </ul>
+                <div class="footer-metrics-box">
+                    <span class="metric-line"><i class="fa-solid fa-circle text-green-vivid"></i> API Principal:
+                        <strong>Estável</strong></span>
+                    <span class="metric-line"><i class="fa-solid fa-bolt text-gold-vivid"></i> Latência Base:
+                        <strong>3.1ms</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 Craft Table / Comunidade Mundo Zera's Craft - Discord</p>
+                <span class="dev-tag">Created by MatheuZera</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
